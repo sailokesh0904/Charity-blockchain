@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Transactions</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        Charity Donation System
+    </header>
+    <div class="container">
+        <h1>Your Transactions</h1>
+        <ul>
+            {% for transaction in transactions %}
+            <li>
+                Donated <b>{{ transaction.amount }}</b> to <b>{{ transaction.charity }}</b>.
+            </li>
+            {% endfor %}
+        </ul>
+        <p><a href="/donate">Make another donation</a></p>
+    </div>
+</body>
+</html>

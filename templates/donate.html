@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        Charity Donation System
+    </header>
+    <div class="container">
+        <h1>Donate to a Charity</h1>
+        <form method="POST">
+            <label for="charity">Charity:</label>
+            <select id="charity" name="charity">
+                {% for charity in charities %}
+                <option value="{{ charity }}">{{ charity }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="donation_amount">Donation Amount:</label>
+            <input type="number" id="donation_amount" name="donation_amount" placeholder="Enter donation amount" required>
+            
+            <label for="p">Prime Number (p):</label>
+            <input type="number" id="p" name="p" placeholder="Enter a prime number" required>
+            
+            <label for="g">Generator (g):</label>
+            <input type="number" id="g" name="g" placeholder="Enter a generator" required>
+            
+            <button type="submit">Donate</button>
+        </form>
+        <p><a href="/transactions">View Your Transactions</a></p>
+    </div>
+</body>
+</html>
